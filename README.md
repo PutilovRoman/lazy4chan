@@ -10,15 +10,16 @@ Fetches all the the files (jpg, jpeg, gif) from a 4chan thread. So if you got a 
 Requirements
 -
   - BeautifulSoup ( is available via pip ` sudo pip install BeautifulSoup`)
+  - docopt (is available via pip `sudo pip install docopt`)
 
 Running it:
 -
   - `git clone https://github.com/DTailor/lazy4chan.git`
   - `sudo pip install -r requirements.txt`
   - Open *main.py* and edit the link variable with the corresponing url.
-  - Run in console `python main.py`
-  - The files are saved in the same directory with the *main.py* file, but in a new folder corresponing to the thread's ID.
+  - Run in console `python main.py LINK_URL` or `python main.py LINK_URL FILDER_NAME`
+  - The files are saved in the same directory with the *main.py* file, but in a new folder corresponing to the thread's ID or the name specified by the user.
  
 To-do:
 -
-  - Make it as a shell tool with [docopt](https://github.com/docopt/docopt) package 
+  - MAke it available to call this tool from anywhere
