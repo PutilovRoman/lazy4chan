@@ -16,10 +16,9 @@ Running it:
 -
   - `git clone https://github.com/DTailor/lazy4chan.git`
   - `sudo pip install -r requirements.txt`
-  - Open *main.py* and edit the link variable with the corresponing url.
   - Run in console `python main.py LINK_URL` or `python main.py LINK_URL FILDER_NAME`
   - The files are saved in the same directory with the *main.py* file, but in a new folder corresponing to the thread's ID or the name specified by the user.
  
 To-do:
 -
-  - MAke it available to call this tool from anywhere
+  - Make it available to call this tool from anywhere
