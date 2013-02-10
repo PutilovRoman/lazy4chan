@@ -9,7 +9,7 @@ Fetches all the the files (jpg, jpeg, gif) from a 4chan thread. So if you got a 
 
 Requirements
 -
-  - BeautifulSoup4 ( is available via pip ` sudo pip install BeautifulSoup`)
+  - BeautifulSoup ( is available via pip ` sudo pip install BeautifulSoup`)
 
 Running it:
 -
