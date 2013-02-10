@@ -17,7 +17,7 @@ Running it:
   - `sudo pip install -r requirements.txt`
   - Open *main.py* and edit the link variable with the corresponing url.
   - Run in console `python main.py`
-  - The files are save in the same directory with the *main.py* file, but in a new folder corresponing to the thread's ID.
+  - The files are saved in the same directory with the *main.py* file, but in a new folder corresponing to the thread's ID.
  
 To-do:
 -
