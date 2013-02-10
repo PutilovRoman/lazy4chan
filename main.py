@@ -2,6 +2,9 @@
 
 Usage:
   l4c.py LINK
+  l4c.py LINK DIR
+
+
 
 """
 from bs4 import BeautifulSoup
@@ -22,11 +25,16 @@ def getSoup(link=''):
 if __name__ == '__main__':
     arguments = docopt(__doc__)
     link =  arguments['LINK']
+
     try:
         soup = getSoup(link)
-        folder =  urlparse(link).path.split('/')[-1]
+        try:
+            folder =  arguments['DIR']
+        except:
+            folder =  urlparse(link).path.split('/')[-1]
         if not os.path.exists(folder):
         	os.makedirs(folder)
+
         i = 0
         for span in soup.find_all('span',{'class':'fileText'}):
         	imgLink = re.sub('//','http://',span.find('a')['href'])
