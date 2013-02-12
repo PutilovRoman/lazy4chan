@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """Lazy4Chan  
 
 Usage:
@@ -32,22 +33,29 @@ if __name__ == '__main__':
             folder =  arguments['DIR']
         except:
             folder =  urlparse(link).path.split('/')[-1]
+
         if not os.path.exists(folder):
-        	os.makedirs(folder)
+            os.makedirs(folder)
 
-        i = 0
+        old = 0
+        new = 0
         for span in soup.find_all('span',{'class':'fileText'}):
-        	imgLink = re.sub('//','http://',span.find('a')['href'])
-        	name = urlparse(imgLink).path.split('/')[-1]
-        	img = urllib2.urlopen(imgLink).read()
+	    imgLink = re.sub('//','http://',span.find('a')['href'])
+	    name = urlparse(imgLink).path.split('/')[-1]
 
-        	file = open(os.path.join(folder,name),'w+')
-        	file.write(img)
-        	file.close
-        	i += 1
-        	print name
+            try:
+                with open(os.path.join(folder,name)) as f:
+                    old +=1 
+            except:
+                img = urllib2.urlopen(imgLink).read()
+                file = open(os.path.join(folder,name),'w+')
+                file.write(img)
+                file.close
+                new += 1
+                print name
 
-        print 'Added %i files' % i
+        print 'Added %i files. Old files: %i. Total %i' % (new,old, new+old)
+
     except:
         print 'No valid link provided'
 
