@@ -29,9 +29,10 @@ if __name__ == '__main__':
 
     try:
         soup = getSoup(link)
-        try:
-            folder =  arguments['DIR']
-        except:
+        
+        if arguments['DIR']:
+            folder = arguments['DIR']
+        else:
             folder =  urlparse(link).path.split('/')[-1]
 
         if not os.path.exists(folder):
